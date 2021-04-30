@@ -18,7 +18,7 @@ export class MovieListComponent implements OnInit {
 
   }
  
- movies:BehaviorSubject<Movie[]> | Observable<Movie[]>=this.httpService.getMovieList()
+ movies : BehaviorSubject<Movie[]> | Observable<Movie[]>=this.httpService.getMovieList()
 
   ngOnInit(): void {
       this.httpService.getMovieList()
@@ -27,7 +27,7 @@ export class MovieListComponent implements OnInit {
   getMovies(): void {}
 
  deleteMovie(id: number): any {
-    this.httpService.deleteMovie(id)
+    return null;
   }
 
 }
