@@ -14,10 +14,9 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  getMovieList(): void {
-    this.http.get<Movie[]>(`${this.BASE_URL}`).subscribe(
-      list => this.movieList.next(list)
-    );
+  getMovieList(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.BASE_URL}`)
+    
   }
 
   deleteMovie(movie: Movie): void {
