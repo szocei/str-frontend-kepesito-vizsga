@@ -1,16 +1,25 @@
 <section class="table-section">
-    <button id="get-button">Get movie List</button>
-    <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Year</th>
-            <th>Category</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-row"></tr>
-        </tbody>
-    </table>
+  <button id="get-button">Get movie List</button>
+  <table class="table-stripped">
+    <thead>
+      <tr class="table-row">
+        <th>Title</th>
+        <th>Year</th>
+        <th>Category</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-row" *ngFor="let movie of movies">
+        <td>{{movie.title}}</td>
+        <td>{{movie.year}}</td>
+        <td>{{movie.category}}</td>
+        <td>
+          <div class="btn-group">
+            <button class="btn btn-info" id="delete-button" (click)="deleteMovie('movie.id')">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </section>

@@ -1,6 +1,8 @@
 import { AfterContentChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {  FormGroup } from '@angular/forms';
 import { Movie } from '../model/movie';
+import { HttpService } from '../service/http.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-movie',
@@ -12,15 +14,20 @@ export class MovieComponent implements OnInit {
   @ViewChild('mForm', { static: true }) movieForm: FormGroup;
   movie: Movie = new Movie();
 
-  constructor() {
+  constructor(
+    private httpService:HttpService
+  ) {
 
   }
+ 
+ 
 
   ngOnInit(): void {
   }
 
-  saveMovie(): any {
-    return {};
+ saveMovie(): any {
+    console.log('movie');
+    
   }
 
 }
